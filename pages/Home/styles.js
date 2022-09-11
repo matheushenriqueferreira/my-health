@@ -1,12 +1,14 @@
 import { StyleSheet } from 'react-native';
 
-
 export const HomeStyle = StyleSheet.create({
   homeMain: {
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
     height: '100%',
+    paddingLeft: 30,
+    paddingRight: 30
   },
 
   homeContainer1: {
@@ -28,9 +30,20 @@ export const HomeStyle = StyleSheet.create({
   },
 
   homeBgImage: {
-    position: 'absolute',
     width: '100%',
-    height: '100%',
-    opacity: 0.2,
+    height: '100%'
+  },
+
+  homeInputLabelFlex: {
+    display: 'flex',
+    flex: 0.2,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  homeInputStyle: {
+    flexBasis: '90%',
+    height: 41,
+    backgroundColor: '#ffffff'
   }
 });
