@@ -29,6 +29,9 @@ const Home = () => {
           </View>
           <Text style={HomeStyle.passwordError}>E-mail e/ou senha inválidos.</Text>
         </View>
+        <Button title='Entrar'></Button>
+        <Button title='Criar minha conta'></Button>
+        <Button title='Esqueci minha senha'></Button>
       </View>
     </ImageBackground>
   );
