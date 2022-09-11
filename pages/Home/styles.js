@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const HomeStyle = StyleSheet.create({
-  homeMain: {
+  mainStyle: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -11,55 +11,55 @@ export const HomeStyle = StyleSheet.create({
     paddingRight: 30
   },
 
-  homeContainer1: {
+  container1: {
     marginTop: 55,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
 
-  homeVaccineImg: {
+  vaccineImg: {
     marginLeft: 4,
     width: 44,
     height: 44
   },
 
-  homeTitle: {
+  title: {
     color: '#419ED7',
     fontSize: 44,
     textDecorationLine: 'underline'
   },
 
-  homeSubtitle: {
+  subtitle: {
     color: '#419ED7',
     fontSize: 28,
     textAlign: 'center'
   },  
 
-  homeBgImage: {
+  bgImage: {
     width: '100%',
     height: '100%'
   },
 
-  homeInputLabelFlex: {
+  inputLabelFlex: {
     display: 'flex',
     flex: 0.2,
     flexDirection: 'row',
     alignItems: 'center'
   },
 
-  homeInputStyle: {
+  inputStyle: {
     flexBasis: '90%',
     height: 45,
     backgroundColor: '#ffffff',
   },
 
-  homeLabelStyle: {
+  labelStyle: {
     color: '#ffffff',
     marginRight: 5
   },
 
-  homePasswordError: {
+  passwordError: {
     color: '#FD7979',
     paddingLeft: 45
   }

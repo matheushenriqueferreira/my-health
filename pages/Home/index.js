@@ -10,24 +10,24 @@ const Home = () => {
 
   return(
     <ImageBackground source={bgVaccine} resizeMode="cover" style={HomeStyle.homeBgImage}>
-      <View style={HomeStyle.homeMain}>
-        <View style={HomeStyle.homeContainer1}>
-          <Image source={iconVacine} style={HomeStyle.homeVaccineImg} />
-          <Text style={HomeStyle.homeTitle}>MyHealth</Text>
+      <View style={HomeStyle.mainStyle}>
+        <View style={HomeStyle.container1}>
+          <Image source={iconVacine} style={HomeStyle.vaccineImg} />
+          <Text style={HomeStyle.title}>MyHealth</Text>
         </View>
         <View>
-          <Text style={HomeStyle.homeSubtitle}>Controle as suas vacinas e fique seguro</Text>
+          <Text style={HomeStyle.subtitle}>Controle as suas vacinas e fique seguro</Text>
         </View>
         <View>
-          <View style={HomeStyle.homeInputLabelFlex}>
-            <Text style={HomeStyle.homeLabelStyle}>E-mail</Text>
-            <TextInput onChangeText={setUserEmail} value={userEmail} keyboardType='email-address' placeholder='Insira o seu e-mail' style={HomeStyle.homeInputStyle} />
+          <View style={HomeStyle.inputLabelFlex}>
+            <Text style={HomeStyle.labelStyle}>E-mail</Text>
+            <TextInput onChangeText={setUserEmail} value={userEmail} keyboardType='email-address' placeholder='Insira o seu e-mail' style={HomeStyle.inputStyle} />
           </View>
-          <View style={HomeStyle.homeInputLabelFlex}>
-            <Text style={HomeStyle.homeLabelStyle}>Senha</Text>
-            <TextInput onChangeText={setUserPassword} value={userPassword} placeholder='Insira a sua senha' style={HomeStyle.homeInputStyle} />
+          <View style={HomeStyle.inputLabelFlex}>
+            <Text style={HomeStyle.labelStyle}>Senha</Text>
+            <TextInput onChangeText={setUserPassword} value={userPassword} placeholder='Insira a sua senha' style={HomeStyle.inputStyle} />
           </View>
-          <Text style={HomeStyle.homePasswordError}>E-mail e/ou senha inválidos.</Text>
+          <Text style={HomeStyle.passwordError}>E-mail e/ou senha inválidos.</Text>
         </View>
       </View>
     </ImageBackground>
