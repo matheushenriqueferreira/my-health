@@ -8,7 +8,8 @@ export const HomeStyle = StyleSheet.create({
     width: '100%',
     height: '100%',
     paddingLeft: 30,
-    paddingRight: 30
+    paddingRight: 30,
+    backgroundColor: 'rgba(211, 211, 211, 0.9)'
   },
 
   container1: {
