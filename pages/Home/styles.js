@@ -5,6 +5,7 @@ export const HomeStyle = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'space-evenly',
     width: '100%',
     height: '100%',
     paddingLeft: 30,
