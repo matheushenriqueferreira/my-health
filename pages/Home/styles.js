@@ -25,9 +25,16 @@ export const HomeStyle = StyleSheet.create({
   },
 
   homeTitle: {
-    fontFamily: 'Averia Libre',
-    fontSize: 44
+    color: '#419ED7',
+    fontSize: 44,
+    textDecorationLine: 'underline'
   },
+
+  homeSubtitle: {
+    color: '#419ED7',
+    fontSize: 28,
+    textAlign: 'center'
+  },  
 
   homeBgImage: {
     width: '100%',
@@ -43,7 +50,17 @@ export const HomeStyle = StyleSheet.create({
 
   homeInputStyle: {
     flexBasis: '90%',
-    height: 41,
-    backgroundColor: '#ffffff'
+    height: 45,
+    backgroundColor: '#ffffff',
+  },
+
+  homeLabelStyle: {
+    color: '#ffffff',
+    marginRight: 5
+  },
+
+  homePasswordError: {
+    color: '#FD7979',
+    paddingLeft: 45
   }
 });

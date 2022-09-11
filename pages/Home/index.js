@@ -16,18 +16,18 @@ const Home = () => {
           <Text style={HomeStyle.homeTitle}>MyHealth</Text>
         </View>
         <View>
-          <Text>Controle as suas vacinas e fique seguro</Text>
+          <Text style={HomeStyle.homeSubtitle}>Controle as suas vacinas e fique seguro</Text>
         </View>
         <View>
           <View style={HomeStyle.homeInputLabelFlex}>
-            <Text>E-mail</Text>
+            <Text style={HomeStyle.homeLabelStyle}>E-mail</Text>
             <TextInput onChangeText={setUserEmail} value={userEmail} keyboardType='email-address' placeholder='Insira o seu e-mail' style={HomeStyle.homeInputStyle} />
           </View>
           <View style={HomeStyle.homeInputLabelFlex}>
-            <Text>Senha</Text>
+            <Text style={HomeStyle.homeLabelStyle}>Senha</Text>
             <TextInput onChangeText={setUserPassword} value={userPassword} placeholder='Insira a sua senha' style={HomeStyle.homeInputStyle} />
           </View>
-          <Text>E-mail e/ou senha inválidos.</Text>
+          <Text style={HomeStyle.homePasswordError}>E-mail e/ou senha inválidos.</Text>
         </View>
       </View>
     </ImageBackground>
