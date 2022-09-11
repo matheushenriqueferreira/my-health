@@ -13,7 +13,6 @@ export const HomeStyle = StyleSheet.create({
   },
 
   container1: {
-    marginTop: 55,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -44,7 +43,6 @@ export const HomeStyle = StyleSheet.create({
 
   inputLabelFlex: {
     display: 'flex',
-    flex: 0.2,
     flexDirection: 'row',
     alignItems: 'center'
   },
