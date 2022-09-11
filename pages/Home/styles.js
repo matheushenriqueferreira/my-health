@@ -45,7 +45,8 @@ export const HomeStyle = StyleSheet.create({
   inputLabelFlex: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 10
   },
 
   inputStyle: {
