@@ -45,11 +45,12 @@ export const HomeStyle = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    width: '100%',
     marginTop: 10
   },
 
   inputStyle: {
-    flexBasis: '90%',
+    flex: 1,
     height: 45,
     backgroundColor: '#ffffff',
   },
@@ -61,6 +62,7 @@ export const HomeStyle = StyleSheet.create({
 
   passwordError: {
     color: '#FD7979',
+    fontSize: 16,
     paddingLeft: 45
   },
 
