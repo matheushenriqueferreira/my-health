@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { Text, View, Image, ImageBackground, TextInput} from 'react-native';
-import iconVacine from '../../assets/icon-vaccine.png';
+import iconVacine from '../../assets/image/icon-vaccine.png';
 import { HomeStyle } from './styles';
-import bgVaccine from '../../assets/bgVaccine.jpeg'
+import bgVaccine from '../../assets/image/bgVaccine.jpeg'
 import ButtonComponent from '../../components/ButtonComponent';
 
 
