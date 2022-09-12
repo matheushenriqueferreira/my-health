@@ -27,7 +27,7 @@ const Home = () => {
           </View>
           <View style={HomeStyle.inputLabelFlex}>
             <Text style={HomeStyle.labelStyle}>Senha</Text>
-            <TextInput onChangeText={setUserPassword} value={userPassword} placeholder='Insira a sua senha' style={HomeStyle.inputStyle} />
+            <TextInput onChangeText={setUserPassword} value={userPassword} secureTextEntry={true} placeholder='Insira a sua senha' style={HomeStyle.inputStyle} />
           </View>
           <Text style={HomeStyle.passwordError}>E-mail e/ou senha inválidos.</Text>
         </View>
