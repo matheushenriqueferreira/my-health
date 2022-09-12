@@ -53,6 +53,8 @@ export const HomeStyle = StyleSheet.create({
     flex: 1,
     height: 45,
     backgroundColor: '#ffffff',
+    color: '#3F92C5',
+    paddingLeft: 10
   },
 
   labelStyle: {
