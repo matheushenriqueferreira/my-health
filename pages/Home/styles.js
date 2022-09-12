@@ -19,9 +19,9 @@ export const HomeStyle = StyleSheet.create({
   },
 
   vaccineImg: {
-    marginLeft: 4,
-    width: 44,
-    height: 44
+    width: 35,
+    height: 35,
+    marginRight: 10
   },
 
   title: {
