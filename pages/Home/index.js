@@ -1,12 +1,14 @@
-import React from 'react';
-import { Text, View, Image, ImageBackground, TextInput, Button } from 'react-native';
+import React, {useState} from 'react';
+import { Text, View, Image, ImageBackground, TextInput} from 'react-native';
 import iconVacine from '../../assets/icon-vaccine.png';
 import { HomeStyle } from './styles';
 import bgVaccine from '../../assets/bgVaccine.jpeg'
+import ButtonComponent from '../../components/ButtonComponent';
+
 
 const Home = () => {
-  const [userEmail, setUserEmail] = React.useState("");
-  const [userPassword, setUserPassword] = React.useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
   return(
     <ImageBackground source={bgVaccine} resizeMode="cover" style={HomeStyle.homeBgImage}>
@@ -29,9 +31,9 @@ const Home = () => {
           </View>
           <Text style={HomeStyle.passwordError}>E-mail e/ou senha inválidos.</Text>
         </View>
-        <Button title='Entrar'></Button>
-        <Button title='Criar minha conta'></Button>
-        <Button title='Esqueci minha senha'></Button>
+        <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
+        <ButtonComponent btnText="Criar minha conta" btnColor="#419ED7"/>
+        <ButtonComponent btnText="Esqueci minha senha" btnColor="#B0CCDE"/>
       </View>
     </ImageBackground>
   );
