@@ -8,8 +8,7 @@ export const HomeStyle = StyleSheet.create({
     justifyContent: 'space-evenly',
     width: '100%',
     height: '100%',
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingHorizontal: 30,
     backgroundColor: 'rgba(211, 211, 211, 0.9)'
   },
 
@@ -63,5 +62,9 @@ export const HomeStyle = StyleSheet.create({
   passwordError: {
     color: '#FD7979',
     paddingLeft: 45
+  },
+
+  btnLogin: {
+    
   }
 });
