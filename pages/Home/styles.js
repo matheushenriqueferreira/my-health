@@ -46,7 +46,7 @@ export const HomeStyle = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    marginTop: 10
+    marginTop: 15
   },
 
   inputStyle: {
