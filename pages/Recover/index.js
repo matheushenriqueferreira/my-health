@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { RecoverStyle } from "./styles";
 import NavbarComponent from '../../components/NavbarComponent';
 import ButtonComponent from '../../components/ButtonComponent';
 
 const Recover = () => {
+  const [userEmail, setUserEmail] = useState('');
+
   return(
     <>
       <NavbarComponent status='notLogged' navbarText='MyHealth' />
@@ -12,11 +14,18 @@ const Recover = () => {
         <View style={RecoverStyle.mainContainer}>
           <View style={RecoverStyle.inputLabel}>
             <Text style={RecoverStyle.labelStyle}>E-mail</Text>
-            <TextInput style={RecoverStyle.inputStyle}/>
+            <TextInput onChangeText={(value) => {setUserEmail(value)}} value={userEmail} style={RecoverStyle.inputStyle} keyboardType={'email-address'}/>
           </View>
-          <TouchableOpacity style={RecoverStyle.btnStyle}>
-            <ButtonComponent btnText='Recuperar senha' btnColor='#37BD6D'/>
-          </TouchableOpacity>
+          {
+            userEmail !== '' ?
+            <TouchableOpacity style={RecoverStyle.btnStyle}>
+              <ButtonComponent btnText='Recuperar senha' btnColor='#37BD6D'/>
+            </TouchableOpacity>
+            :
+            <TouchableOpacity onPress={() => alert("Insira o seu e-mail")} style={[RecoverStyle.btnStyle, RecoverStyle.btnStyleDisabled]}>
+              <ButtonComponent btnText='Recuperar senha' btnColor='#37BD6D'/>
+            </TouchableOpacity>
+          }
         </View>
       </View>
     </>
