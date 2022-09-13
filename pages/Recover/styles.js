@@ -31,10 +31,16 @@ export const RecoverStyle = StyleSheet.create({
   inputStyle: {
     paddingVertical: 0,
     backgroundColor: '#FFFFFF',
-    flex: 1
+    flex: 1,
+    height: 30,
+    color: '#3F92C5'
   },
 
   btnStyle: {
     alignItems: 'center'
+  },
+
+  btnStyleDisabled: {
+    opacity: 0.5
   }
 });
