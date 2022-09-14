@@ -14,6 +14,22 @@ const Register = () => {
   const [msgPass, setMsgPass] = useState('');
   const [loading, setLoading] = useState(false);
 
+
+  const handlePassword = (password) => {
+    if(password !== '') {
+      if(password === userRepeatPass) {
+        setMsgPass('Ok');
+      }
+      else {
+        setMsgPass('Error');
+      }
+    }
+    else {
+      setMsgPass('');
+      setUserRepeatPass('');
+    }
+  }
+
   const handleRepeatPasword = (rPass) => {
     if(rPass !== '') {
       setMsgPass('');
@@ -49,7 +65,10 @@ const Register = () => {
             </View>
             <View style={RegisterStyle.dataContainer}>
               <Text style={RegisterStyle.labelStyle}>Senha</Text>
-              <TextInput onChangeText={(value) => {setUserPassword(value)}} value={userPassword} style={RegisterStyle.inputStyle} secureTextEntry={true} />
+              <TextInput onChangeText={(value) => {
+                setUserPassword(value),
+                handlePassword(value)
+              }} value={userPassword} style={RegisterStyle.inputStyle} secureTextEntry={true} />
             </View>
             <View style={RegisterStyle.dataContainer}>
               <Text style={RegisterStyle.labelStyle}>Repetir senha</Text>
