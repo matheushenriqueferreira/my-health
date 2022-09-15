@@ -3,17 +3,17 @@ import { View, TouchableOpacity, Text, TextInput, ScrollView, ActivityIndicator 
 import { RegisterStyle } from './styles'
 import NavbarComponent from "../../components/NavbarComponent";
 import ButtonComponent from '../../components/ButtonComponent';
+import { RadioButton } from "react-native-paper";
 
 const Register = () => {
   const [userName, setUserName] = useState('');
-  const [userSex, setUserSex] = useState('');
+  const [userSex, setUserSex] = useState('Masculino');
   const [userDate, setUserDate] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [userRepeatPass, setUserRepeatPass] = useState('');
   const [msgPass, setMsgPass] = useState('');
   const [loading, setLoading] = useState(false);
-
 
   const handlePassword = (password) => {
     if(password !== '') {
@@ -53,7 +53,12 @@ const Register = () => {
             </View>
             <View style={RegisterStyle.dataContainer}>
               <Text style={RegisterStyle.labelStyle}>Sexo</Text>
-              <TextInput onChangeText={(value) => {setUserSex(value)}} value={userSex} style={RegisterStyle.inputStyle} />
+              <View style={RegisterStyle.radioButtonContainer}>
+                <RadioButton color="#3F92C5" uncheckedColor="#FFFFFF" value="Masculino" status={userSex === 'Masculino' ? 'checked' : 'unchecked'} onPress={() => setUserSex('Masculino')} />
+                <Text onPress={() => setUserSex('Masculino')} style={RegisterStyle.radioButtonLabel}>Masculino</Text>
+                <RadioButton color="#3F92C5" uncheckedColor="#FFFFFF" value="Feminino" status={userSex === 'Feminino' ? 'checked' : 'unchecked'} onPress={() => setUserSex('Feminino')} />
+                <Text onPress={() => setUserSex('Feminino')} style={RegisterStyle.radioButtonLabel}>Feminino</Text>
+              </View>
             </View>
             <View style={RegisterStyle.dataContainer}>
               <Text style={RegisterStyle.labelStyle}>Data nascimento</Text>
@@ -95,7 +100,6 @@ const Register = () => {
                 <ButtonComponent btnText='Cadastrar' btnColor='#37BD6D'/>
               </TouchableOpacity>
             }
-            
           </ScrollView>
         </View>
     </>

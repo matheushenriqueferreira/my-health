@@ -36,6 +36,17 @@ export const RegisterStyle = StyleSheet.create({
     color: '#3F92C5',
   },
 
+  radioButtonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexBasis: '70%'
+  },
+
+  radioButtonLabel: {
+    color: '#FFFFFF'
+  },
+
   passMessage: {
     color: '#FD7979',
     marginLeft: 120
