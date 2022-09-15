@@ -6,9 +6,13 @@ import bgVaccine from '../../assets/image/bgVaccine.jpeg'
 import ButtonComponent from '../../components/ButtonComponent';
 
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+
+  const handleNavigation = (screen) => {
+    navigation.navigate(screen);
+  }
 
   return(
     <ImageBackground source={bgVaccine} resizeMode="cover" style={HomeStyle.homeBgImage}>
@@ -34,10 +38,10 @@ const Home = () => {
         <TouchableOpacity>
           <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleNavigation('register')}>
           <ButtonComponent btnText="Criar minha conta" btnColor="#419ED7"/>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleNavigation('recover')}>
           <ButtonComponent btnText="Esqueci minha senha" btnColor="#B0CCDE"/>
         </TouchableOpacity>
       </View>
