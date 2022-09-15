@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, Image, ImageBackground, TextInput} from 'react-native';
+import { Text, View, Image, ImageBackground, TextInput, TouchableOpacity} from 'react-native';
 import iconVacine from '../../assets/image/icon-vaccine.png';
 import { HomeStyle } from './styles';
 import bgVaccine from '../../assets/image/bgVaccine.jpeg'
@@ -31,9 +31,15 @@ const Home = () => {
           </View>
           <Text style={HomeStyle.passwordError}>E-mail e/ou senha inválidos.</Text>
         </View>
-        <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
-        <ButtonComponent btnText="Criar minha conta" btnColor="#419ED7"/>
-        <ButtonComponent btnText="Esqueci minha senha" btnColor="#B0CCDE"/>
+        <TouchableOpacity>
+          <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <ButtonComponent btnText="Criar minha conta" btnColor="#419ED7"/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <ButtonComponent btnText="Esqueci minha senha" btnColor="#B0CCDE"/>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );

@@ -6,6 +6,7 @@ import ButtonComponent from '../../components/ButtonComponent';
 
 const Recover = () => {
   const [userEmail, setUserEmail] = useState('');
+  
 
   return(
     <>
