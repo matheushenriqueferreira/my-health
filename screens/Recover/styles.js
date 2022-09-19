@@ -32,7 +32,7 @@ export const RecoverStyle = StyleSheet.create({
     paddingVertical: 0,
     backgroundColor: '#FFFFFF',
     flex: 1,
-    height: 30,
+    height: 40,
     color: '#3F92C5'
   },
 
