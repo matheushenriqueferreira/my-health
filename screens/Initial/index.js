@@ -39,9 +39,16 @@ const Initial = ({navigation}) => {
             <Text style={InitialStyle.passwordError}>E-mail e/ou senha inválidos.</Text>
           }
         </View>
-        <TouchableOpacity>
-          <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
-        </TouchableOpacity>
+        {
+          userEmail !== '' && userPassword !== '' ?
+          <TouchableOpacity>
+            <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
+          </TouchableOpacity>
+          :
+          <TouchableOpacity onPress={() => alert('Preencha todos os campos!')} style={{opacity: 0.5}}>
+            <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
+          </TouchableOpacity>
+        }
         <TouchableOpacity onPress={() => handleNavigation('register')}>
           <ButtonComponent btnText="Criar minha conta" btnColor="#419ED7"/>
         </TouchableOpacity>
