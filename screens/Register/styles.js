@@ -57,7 +57,8 @@ export const RegisterStyle = StyleSheet.create({
 
   calendarIcon: {
     width: 23,
-    height: 23
+    height: 23,
+    opacity: 0.3
   },
 
   errorPass: {
