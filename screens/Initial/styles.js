@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const HomeStyle = StyleSheet.create({
+export const InitialStyle = StyleSheet.create({
   mainStyle: {
     display: 'flex',
     flexDirection: 'column',
@@ -19,8 +19,8 @@ export const HomeStyle = StyleSheet.create({
   },
 
   vaccineImg: {
-    width: 35,
-    height: 35,
+    width: 40,
+    height: 40,
     marginRight: 10
   },
 
@@ -59,13 +59,13 @@ export const HomeStyle = StyleSheet.create({
 
   labelStyle: {
     color: '#ffffff',
-    marginRight: 5
+    flexBasis: '14%'
   },
 
   passwordError: {
     color: '#FD7979',
     fontSize: 16,
-    paddingLeft: 45
+    paddingLeft: 48
   },
 
   btnLogin: {
