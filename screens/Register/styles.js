@@ -2,62 +2,71 @@ import { StyleSheet } from "react-native";
 
 export const RegisterStyle = StyleSheet.create({
   main: {
-    height: '100%',
-    backgroundColor: '#ADD4D0',
-    paddingHorizontal: 15    
-  },
-
-  mainContent: {
-    marginVertical: 85
-  },
-
-  dataContainer:{
+    flex: 1,
     display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    paddingHorizontal: 15,
+    backgroundColor: '#ADD4D0',
+  },
+
+  mainContainer1: {
+    flex: 0.8,
+  },
+
+  dataContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    height: 30,
-    marginTop: 10,
-    flex: 1
+    marginTop: 15
   },
 
   labelStyle: {
-    color: '#FFFFFF',
     textAlign: 'right',
+    color: '#FFFFFF',
+    fontWeight: 'bold',
     flexBasis: '30%',
     marginRight: 10
   },
 
   inputStyle: {
+    flex: 1,
     paddingVertical: 0,
-    paddingLeft: 10,
-    flexBasis: '70%',
-    backgroundColor: '#FFFFFF',
+    height: 35,
     color: '#3F92C5',
+    backgroundColor: '#FFFFFF'
   },
 
   radioButtonContainer: {
-    display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
-    flexBasis: '70%'
-  },
-
-  radioButtonLabel: {
-    color: '#FFFFFF'
-  },
-
-  passMessage: {
-    color: '#FD7979',
-    marginLeft: 120
-  },
-
-  btnContainer: {
-    marginTop: 100,
     alignItems: 'center'
   },
 
-  btnDisabled: {
-    opacity: 0.5
-  }
+  userDateContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 5,
+    justifyContent: 'space-between',
+    height: 35,
+    backgroundColor: '#FFFFFF'
+  },
+
+  blueColor: {
+    color: '#3F92C5'
+  },
+
+  calendarIcon: {
+    width: 23,
+    height: 23
+  },
+
+  errorPass: {
+    color: '#FD7979',
+    marginLeft: 125
+  },
+
+  mainContainer2: {
+    alignItems: 'center'
+  },
+
 });
