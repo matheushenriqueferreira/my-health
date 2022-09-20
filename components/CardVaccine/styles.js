@@ -9,9 +9,9 @@ export const CardVaccineStyle = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     borderRadius: 8,
-    width: '50%',
+    width: '48%',
     height: 200,
-    maxWidth: '50%',
+    maxWidth: '48%',
     maxHeight: 200
   },
 
@@ -43,16 +43,15 @@ export const CardVaccineStyle = StyleSheet.create({
   },
 
   container2: {
-    width: 175,
-    maxWidth: 175,
-    alignItems: 'center',
+    width: '100%',
     height: 120,
+    alignItems: 'center',
     justifyContent: 'center'
   },
 
   image: {
-    width: 230,
-    maxWidth: 230,
+    width: 215,
+    maxWidth: 215,
     height: 100,
     maxHeight: 100,
   },
