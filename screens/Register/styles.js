@@ -11,25 +11,26 @@ export const RegisterStyle = StyleSheet.create({
   },
 
   mainContainer1: {
-    flex: 0.8,
+    flex: 0.7,
   },
 
   dataContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 15
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent:  'space-around'
+  },
+
+  radioButtonRow: {
+    flexDirection: 'row'
   },
 
   labelStyle: {
-    textAlign: 'right',
     color: '#FFFFFF',
     fontWeight: 'bold',
-    flexBasis: '30%',
-    marginRight: 10
   },
 
   inputStyle: {
-    flex: 1,
+    width: '100%',
     paddingVertical: 0,
     height: 35,
     color: '#3F92C5',
@@ -42,7 +43,7 @@ export const RegisterStyle = StyleSheet.create({
   },
 
   userDateContainer: {
-    flex: 1,
+    width: '50%',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 5,
@@ -61,12 +62,17 @@ export const RegisterStyle = StyleSheet.create({
     opacity: 0.3
   },
 
+  repeatPassContent: {
+    flexDirection: 'row',
+  },
+
   errorPass: {
     color: '#FD7979',
-    marginLeft: 125
   },
 
   mainContainer2: {
+    flex: 0.1,
+    justifyContent: 'center',
     alignItems: 'center'
   },
 
