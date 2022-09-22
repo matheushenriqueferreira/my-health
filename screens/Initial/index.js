@@ -1,19 +1,35 @@
 import React, {useState} from 'react';
-import { Text, View, Image, ImageBackground, TextInput, TouchableOpacity} from 'react-native';
+import { Text, View, Image, ImageBackground, TextInput, TouchableOpacity, ActivityIndicator} from 'react-native';
 import iconVacine from '../../assets/image/icon-vaccine.png';
 import { InitialStyle } from './styles';
 import bgVaccine from '../../assets/image/bgVaccine.jpeg'
 import ButtonComponent from '../../components/ButtonComponent';
-
+import { auth } from '../../config/FirebaseConfig/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Initial = ({navigation}) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [loginError, setLoginError] = useState(false); 
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = () => {
+    setLoading(true);
+    signInWithEmailAndPassword(auth, userEmail, userPassword)
+    .then(() => {
+      setLoading(false);
+      navigation.navigate('LoggedNavigation');
+    })
+    .catch(() => {
+      setLoading(false);
+      setLoginError(true);
+    })
+  }
 
   const handleNavigation = (screen) => {
     navigation.navigate(screen);
   }
+
 
   return(
     <ImageBackground source={bgVaccine} resizeMode="cover" style={InitialStyle.homeBgImage}>
@@ -40,14 +56,17 @@ const Initial = ({navigation}) => {
           }
         </View>
         {
-          userEmail !== '' && userPassword !== '' ?
-          <TouchableOpacity>
+          userEmail !== '' && userPassword !== '' && !loading ?
+          <TouchableOpacity onPress={() => handleLogin()}>
             <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
           </TouchableOpacity>
           :
+          userEmail === '' || userPassword === '' && !loading ?
           <TouchableOpacity onPress={() => alert('Preencha todos os campos!')} style={{opacity: 0.5}}>
             <ButtonComponent btnText="Entrar" btnColor="#37BD6D"/>
           </TouchableOpacity>
+          :
+          <ActivityIndicator size={'large'} color='#37BD6D' />
         }
         <TouchableOpacity onPress={() => handleNavigation('register')}>
           <ButtonComponent btnText="Criar minha conta" btnColor="#419ED7"/>
