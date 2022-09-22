@@ -9,10 +9,11 @@ export const CardVaccineStyle = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     borderRadius: 8,
-    width: '48%',
-    height: 200,
+    margin: 4,
+    width: '46%',
+    height: 180,
     maxWidth: '48%',
-    maxHeight: 200
+    maxHeight: 180
   },
 
   textColorBlue: {
@@ -36,7 +37,7 @@ export const CardVaccineStyle = StyleSheet.create({
   },
 
   container1: {
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     height: 70,
     flexDirection: 'column',
     alignItems: 'center'
@@ -44,15 +45,14 @@ export const CardVaccineStyle = StyleSheet.create({
 
   container2: {
     width: '100%',
-    height: 120,
+    height: 100,
     alignItems: 'center',
     justifyContent: 'center'
   },
 
   image: {
-    width: 215,
-    maxWidth: 215,
-    height: 100,
+    width: '100%',
+    height: '100%',
     maxHeight: 100,
   },
 
