@@ -14,6 +14,7 @@ const Initial = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
+    setLoginError(false);
     setLoading(true);
     signInWithEmailAndPassword(auth, userEmail, userPassword)
     .then(() => {
