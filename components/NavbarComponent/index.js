@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { NavbarComponentStyle } from "./styles";
 import hamburgerIcon from '../../assets/image/hamburgerIcon.png';
-import line from '../../assets/image/line.png'
 import iconVaccine from '../../assets/image/icon-vaccine.png'
-import iconLogout from '../../assets/image/logout.png'
 
-const NavbarComponent = ({status, navbarText}) => {
+const NavbarComponent = ({navigation, status, navbarText}) => {
   
   return(
     <View style={NavbarComponentStyle.navbar}>
@@ -18,7 +16,7 @@ const NavbarComponent = ({status, navbarText}) => {
               <Image style={NavbarComponentStyle.navbarIcon} source={iconVaccine} />
             </View>
             :
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
               <Image style={NavbarComponentStyle.navbarIcon} source={hamburgerIcon} />
             </TouchableOpacity>
           }

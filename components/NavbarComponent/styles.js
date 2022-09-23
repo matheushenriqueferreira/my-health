@@ -2,16 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const NavbarComponentStyle = StyleSheet.create({
   navbar: {
-    position: 'relative',
     width: '100%',
     height: 60,
-    minHeight: 60,
-    zIndex: 10
   },
   
   navbarContainer: {
     width: '100%',
-    height: '100%',
+    height: 60,
     backgroundColor: '#C1E7E3',
     paddingHorizontal: 10
   },
