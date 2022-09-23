@@ -53,7 +53,18 @@ const Register = ({navigation}) => {
     })
     .catch((error) => {
       setLoading(false);
-      alert(error.code);
+      switch(error.code) {
+        case 'auth/weak-password':
+          alert('Senha fraca');
+        break;
+        case 'auth/email-already-in-use':
+          alert('Já existe uma conta vinculada a este e-mail!');
+        break;
+        case 'auth/invalid-email':
+          alert('E-mail inválido');
+        break;
+        default: alert(error.code);
+      }
     })
   }
 
@@ -126,7 +137,7 @@ const Register = ({navigation}) => {
           }
         </View>
       </View>
-      <DatePicker onConfirm={(date) => {setOpen(false) 
+      <DatePicker title={'Selecione a data'} confirmText={'Confirmar'} cancelText={'Cancelar'} textColor={"#419ED7"} onConfirm={(date) => {setOpen(false) 
         setUserDate(date),
         handleDate(date)
         }} onCancel={() => {setOpen(false)}} mode="date" modal open={open} date={userDate}
