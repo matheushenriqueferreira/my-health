@@ -3,10 +3,30 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { RecoverStyle } from "./styles";
 import NavbarComponent from '../../components/NavbarComponent';
 import ButtonComponent from '../../components/ButtonComponent';
+import { auth } from '../../config/FirebaseConfig/firebase';
+import { sendPasswordResetEmail } from 'firebase/auth';
 
-const Recover = () => {
+const Recover = ({navigation}) => {
   const [userEmail, setUserEmail] = useState('');
-  
+
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth, userEmail)
+    .then(() => {
+      alert("Foi enviado um e-mail para resetar a sua senha!");
+      navigation.pop();
+    })
+    .catch((error) => {
+      switch(error.code){
+        case 'auth/invalid-email':
+          alert('E-mail inválido');  
+        break;
+        case 'auth/user-not-found':
+          alert('Não existe cadastro vinculado a este e-mail!');
+        break;
+        default: alert(error.code);
+      }
+    })
+  }
 
   return(
     <>
@@ -19,7 +39,7 @@ const Recover = () => {
           </View>
           {
             userEmail !== '' ?
-            <TouchableOpacity style={RecoverStyle.btnStyle}>
+            <TouchableOpacity onPress={() => handlePasswordReset()} style={RecoverStyle.btnStyle}>
               <ButtonComponent btnText='Recuperar senha' btnColor='#37BD6D'/>
             </TouchableOpacity>
             :
