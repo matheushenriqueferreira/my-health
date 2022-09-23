@@ -7,8 +7,9 @@ import { RadioButton } from 'react-native-paper';
 import ButtonComponent from '../../components/ButtonComponent';
 import teste from '../../assets/image/image-comprovante.png';
 import NavbarComponent from '../../components/NavbarComponent'
+import { launchImageLibrary } from 'react-native-image-picker';
 
-const NewVaccine = () => {
+const NewVaccine = ({navigation}) => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [datePickerType, setDatePickerType] = useState('');
@@ -31,9 +32,20 @@ const NewVaccine = () => {
     }
   }
 
+  const handleVaccineImage = () => {
+    launchImageLibrary({mediaType: 'photo', includeExtra: true})
+    .then((response) => {
+      response.assets.forEach(element => {
+        setProfOfVaccination(element);
+        console.log(element)
+      });
+    })
+    .catch(() => setProfOfVaccination(''));
+  }
+
   return(
     <>
-      <NavbarComponent status={'logged'} navbarText={'Minhas vacinas'} />
+      <NavbarComponent navigation={navigation} status={'logged'} navbarText={'Minhas vacinas'} />
       <View style={NewVaccineStyle.main}>
         <View style={NewVaccineStyle.mainContainer1}>
           <View style={NewVaccineStyle.dataContainer}>
@@ -95,7 +107,7 @@ const NewVaccine = () => {
           <View style={NewVaccineStyle.dataContainerRow}>
               <Text style={[NewVaccineStyle.labelContainer, NewVaccineStyle.labelStyle]}>Comprovante</Text>
               <View style={NewVaccineStyle.imageContainer}>
-                <TouchableOpacity style={NewVaccineStyle.imageBtnContainer}> 
+                <TouchableOpacity onPress={() => handleVaccineImage()} style={NewVaccineStyle.imageBtnContainer}> 
                   <Text style={NewVaccineStyle.imageBtnText}>Selecionar imagem...</Text>
                 </TouchableOpacity>
                 <View style={NewVaccineStyle.imageContent}>
@@ -103,7 +115,7 @@ const NewVaccine = () => {
                     profOfVaccination === '' ?
                     <Text style={NewVaccineStyle.imageContentText}>Nenhuma imagem selecionada</Text>
                     :
-                    <Image source={teste} style={NewVaccineStyle.vaccineImage} />
+                    <Image source={{uri: profOfVaccination.uri}} style={NewVaccineStyle.vaccineImage} />
                   }
                 </View>
               </View>
@@ -122,7 +134,7 @@ const NewVaccine = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <DatePicker onConfirm={(date) => {setOpen(false) 
+      <DatePicker title={'Selecione a data'} confirmText={'Confirmar'} cancelText={'Cancelar'} textColor={"#419ED7"} onConfirm={(date) => {setOpen(false) 
         setDate(date),
         handleDate(date)
         }} onCancel={() => {setOpen(false)}} mode="date" modal open={open} date={date}
