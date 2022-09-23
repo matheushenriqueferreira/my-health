@@ -9,7 +9,7 @@ import teste from '../../assets/image/image-comprovante.png';
 import NavbarComponent from '../../components/NavbarComponent'
 import trash from '../../assets/image/trash.png';
 
-const EditVaccine = () => {
+const EditVaccine = ({navigation}) => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [datePickerType, setDatePickerType] = useState('');
@@ -34,7 +34,7 @@ const EditVaccine = () => {
 
   return(
     <>
-      <NavbarComponent status={'logged'} navbarText={'Minhas vacinas'} />
+      <NavbarComponent navigation={navigation} status={'logged'} navbarText={'Minhas vacinas'} />
       <View style={EditVaccineStyle.main}>
         <View style={EditVaccineStyle.mainContainer1}>
           <View style={EditVaccineStyle.dataContainer}>
@@ -129,7 +129,7 @@ const EditVaccine = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <DatePicker onConfirm={(date) => {setOpen(false) 
+      <DatePicker title={'Selecione a data'} confirmText={'Confirmar'} cancelText={'Cancelar'} textColor={"#419ED7"} onConfirm={(date) => {setOpen(false) 
         setDate(date),
         handleDate(date)
         }} onCancel={() => {setOpen(false)}} mode="date" modal open={open} date={date}
