@@ -7,18 +7,22 @@ import Initial from "../../screens/Initial";
 import Register from "../../screens/Register";
 import Recover from "../../screens/Recover";
 
-const Stack = createNativeStackNavigator()
+//import do Drawer Navigator
+import LoggedNavigation from "../LoggedNavigation";
 
-const ScreenNavigation = () => {
+const Stack = createNativeStackNavigator();
+
+const NoLoggedNavigation = () => {
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="initial" screenOptions={{headerShown: false}}>
-        <Stack.Screen name="initial" component={Initial} />
+      <Stack.Navigator initialRouteName="Initial" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Initial" component={Initial} />
         <Stack.Screen name="register" component={Register} />
         <Stack.Screen name="recover" component={Recover} />
+        <Stack.Screen name="LoggedNavigation" component={LoggedNavigation} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-export default ScreenNavigation;
+export default NoLoggedNavigation;
