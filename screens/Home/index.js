@@ -6,10 +6,10 @@ import iconSearch from '../../assets/image/search.png'
 import ButtonComponent from '../../components/ButtonComponent'
 import NavbarComponent from '../../components/NavbarComponent'
 
-const Home = () => {
+const Home = ({navigation}) => {
   return(
     <>
-    <NavbarComponent status={'logged'} navbarText='Minhas vacinas' />
+    <NavbarComponent navigation={navigation} status={'logged'} navbarText='Minhas vacinas' />
       <View style={HomeStyle.main}>
         <View style={HomeStyle.searchContainer}>
           <Image style={HomeStyle.searchIcon} resizeMode='stretch' source={iconSearch} />
@@ -20,7 +20,7 @@ const Home = () => {
           <CardVaccine />
           <CardVaccine />
         </View>
-        <TouchableOpacity style={HomeStyle.btnContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('NewVaccine')} style={HomeStyle.btnContainer}>
           <ButtonComponent  btnText={'Nova vacina'} btnColor={'#37BD6D'}/>
         </TouchableOpacity>
       </View>
