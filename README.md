@@ -9,14 +9,14 @@
 <p align="center">Carteira de vacinação digital para controlar as vacinas recebidas, incluindo a imagem do comprovante vacinal bem como as datas das próximas doses.</p>
 <p align="center">:syringe:</p>
 <div align="center">
-  <img src="./docs/initial.png" />
+  <img src="./docs/initial.png" width='100px' />
 </div>
 
 ## :white_check_mark: Funcionalidades do projeto
 
 - [x] Cadastro de usuário
 - [x] Autenticação de usuário
-- [x] Reuperação de senha
+- [x] Recuperação de senha
 - [x] Criação/edição/exclusão de cartão de vacinas
 - [x] Busca de vacinas
 
