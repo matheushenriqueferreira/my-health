@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { View, TouchableOpacity, Text, TextInput, Image, ActivityIndicator } from "react-native";
 import { RegisterStyle } from './styles'
 import NavbarComponent from "../../components/NavbarComponent";
@@ -6,8 +6,10 @@ import ButtonComponent from '../../components/ButtonComponent';
 import { RadioButton } from "react-native-paper";
 import DatePicker from 'react-native-date-picker'
 import calendarIcon from '../../assets/image/calendar.png'
-import { auth } from '../../config/FirebaseConfig/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, firestore } from '../../config/FirebaseConfig/firebase';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc, setDoc } from "firebase/firestore";
+import FontGlobal from "../../styles/FontGlobal";
 
 const Register = ({navigation}) => {
   const [userName, setUserName] = useState('');
@@ -48,8 +50,23 @@ const Register = ({navigation}) => {
   const handleRegister = () => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, userEmail, userPassword)
-    .then((reponse) => {
-      navigation.pop();
+    .then((response) => {
+      const userData = {
+        userName,
+        userSex,
+        userDate: userDateText,
+        userEmail
+      }
+      setDoc(doc(firestore, 'userData', response.user.uid), userData)
+      .then(() => {
+        const name = userName.split(' ');//Para pegar apenas o primeiro nome
+        updateProfile(response.user, {displayName: name[0]})//Atualizar display name
+        .then(() => {
+          navigation.pop();
+        })
+        .catch((error) => alert(error.code))
+      })
+      .catch((error) => alert(error.code));
     })
     .catch((error) => {
       setLoading(false);
@@ -70,53 +87,55 @@ const Register = ({navigation}) => {
 
   return(
     <>
-      <NavbarComponent status='notLogged' navbarText='MyHealth' />
+      <NavbarComponent status='notLogged' navbarScreen={'MyHealth'} />
       <View style={RegisterStyle.main}>
         <View style={RegisterStyle.mainContainer1} >
           <View style={RegisterStyle.dataContainer} >
-            <View>
-              <Text style={RegisterStyle.labelStyle}>Nome completo</Text>
-              <TextInput onChangeText={(value) => setUserName(value)} value={userName} style={RegisterStyle.inputStyle}/>
+            <View style={RegisterStyle.inputLabelContainer}>
+              <Text style={[RegisterStyle.labelStyle, FontGlobal.AveriaBold]}>Nome completo</Text>
+              <TextInput onChangeText={(value) => setUserName(value)} value={userName} style={[RegisterStyle.inputStyle, FontGlobal.AveriaRegular]}/>
             </View>
-            <View>
-              <Text style={RegisterStyle.labelStyle}>Sexo</Text>
+            <View style={RegisterStyle.inputLabelContainer}>
+              <Text style={[RegisterStyle.labelStyle, FontGlobal.AveriaBold]}>Sexo</Text>
               <View style={RegisterStyle.radioButtonRow}>
                 <View style={RegisterStyle.radioButtonContainer}>
                   <RadioButton color="#419ED7" value={userSex} uncheckedColor="#FFFFFF" status={ userSex === 'Masculino' ? 'checked' : 'unchecked'} onPress={() => setUserSex('Masculino')} />
-                  <Text onPress={() => setUserSex('Masculino')} style={RegisterStyle.labelStyle}>Masculino</Text>
+                  <Text onPress={() => setUserSex('Masculino')} style={[{color: '#FFFFFF', fontSize: 16}, FontGlobal.AveriaBold]}>Masculino</Text>
                 </View>
                 <View style={RegisterStyle.radioButtonContainer}>
                   <RadioButton color="#419ED7" uncheckedColor="#FFFFFF" value={userSex} status={ userSex === 'Feminino' ? 'checked' : 'unchecked'} onPress={() => setUserSex('Feminino')} />
-                  <Text onPress={() => setUserSex('Feminino')} style={RegisterStyle.labelStyle}>Feminino</Text>
+                  <Text onPress={() => setUserSex('Feminino')} style={[{color: '#FFFFFF', fontSize: 16}, FontGlobal.AveriaBold]}>Feminino</Text>
                 </View>
               </View>
             </View>
-            <View>
-              <Text style={RegisterStyle.labelStyle}>Data nascimento</Text>
+            <View style={RegisterStyle.inputLabelContainer}>
+              <Text style={[RegisterStyle.labelStyle, FontGlobal.AveriaBold]}>Data nascimento</Text>
               <TouchableOpacity onPress={() => setOpen(true)} style={RegisterStyle.userDateContainer}>
-                <Text style={RegisterStyle.blueColor}>{userDateText}</Text>
+                <Text style={[RegisterStyle.blueColor, FontGlobal.AveriaRegular]}>{userDateText}</Text>
                 <Image source={calendarIcon} style={RegisterStyle.calendarIcon}></Image>
               </TouchableOpacity>
             </View>
-            <View>
-              <Text style={RegisterStyle.labelStyle}>E-mail</Text>
-              <TextInput onChangeText={(value) => setUserEmail(value)} value={userEmail} style={RegisterStyle.inputStyle} keyboardType={'email-address'} />
+            <View style={RegisterStyle.inputLabelContainer}>
+              <Text style={[RegisterStyle.labelStyle, FontGlobal.AveriaBold]}>E-mail</Text>
+              <TextInput onChangeText={(value) => setUserEmail(value)} value={userEmail} style={[RegisterStyle.inputStyle, FontGlobal.AveriaRegular]} keyboardType={'email-address'} />
             </View>
-            <View>
-              <Text style={RegisterStyle.labelStyle}>Senha</Text>
+            <View style={RegisterStyle.inputLabelContainer}>
+              <Text style={[RegisterStyle.labelStyle, FontGlobal.AveriaBold]}>Senha</Text>
               <TextInput onChangeText={(value) => {
                 setUserPassword(value),
                 handlePassword(value)
-              }} value={userPassword} style={RegisterStyle.inputStyle} secureTextEntry={true} />
+              }} value={userPassword} style={[RegisterStyle.inputStyle, FontGlobal.AveriaRegular]} secureTextEntry={true} />
             </View>
             <View>
-              <Text style={RegisterStyle.labelStyle}>Repetir senha</Text>
-              <TextInput onChangeText={(value) => {
-                setUserRepeatPass(value),
-                handleRepeatPasword(value)
-              }} value={userRepeatPass} style={RegisterStyle.inputStyle} secureTextEntry={true} />
+              <View style={RegisterStyle.inputLabelContainer}>
+                <Text style={[RegisterStyle.labelStyle, FontGlobal.AveriaBold]}>Repetir senha</Text>
+                <TextInput onChangeText={(value) => {
+                  setUserRepeatPass(value),
+                  handleRepeatPasword(value)
+                }} value={userRepeatPass} style={[RegisterStyle.inputStyle, FontGlobal.AveriaRegular]} secureTextEntry={true} />
+              </View>
               {
-                msgPass && <Text style={RegisterStyle.errorPass}>Senha não confere</Text>
+                msgPass && <Text style={[RegisterStyle.errorPass, FontGlobal.AveriaRegular]}>Senha não confere</Text>
               }
             </View>
           </View>

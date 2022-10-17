@@ -11,7 +11,7 @@ export const RegisterStyle = StyleSheet.create({
   },
 
   mainContainer1: {
-    flex: 0.7,
+    flex: 0.5,
   },
 
   dataContainer: {
@@ -20,21 +20,30 @@ export const RegisterStyle = StyleSheet.create({
     justifyContent:  'space-around'
   },
 
+  inputLabelContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
   radioButtonRow: {
     flexDirection: 'row'
   },
 
   labelStyle: {
     color: '#FFFFFF',
-    fontWeight: 'bold',
+    flexBasis: '35%',
+    textAlign: 'right',
+    marginRight: 10,
+    fontSize: 16
   },
 
   inputStyle: {
-    width: '100%',
+    flex: 1,
     paddingVertical: 0,
     height: 35,
     color: '#3F92C5',
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFFFF',
+    fontSize: 16
   },
 
   radioButtonContainer: {
@@ -53,7 +62,8 @@ export const RegisterStyle = StyleSheet.create({
   },
 
   blueColor: {
-    color: '#3F92C5'
+    color: '#3F92C5',
+    fontSize: 16
   },
 
   calendarIcon: {
@@ -62,12 +72,23 @@ export const RegisterStyle = StyleSheet.create({
     opacity: 0.3
   },
 
+  repeatPassInput: {
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 0,
+    height: 35,
+  },
+
   repeatPassContent: {
-    flexDirection: 'row',
+    backgroundColor: 'black',
+    flex: 1,
+    flexDirection: 'column',
+    paddingBottom: 10
   },
 
   errorPass: {
     color: '#FD7979',
+    marginLeft: 144
   },
 
   mainContainer2: {

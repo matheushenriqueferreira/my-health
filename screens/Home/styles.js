@@ -4,8 +4,7 @@ export const HomeStyle = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: '#ADD4D0',
-    paddingHorizontal: 15,
-    justifyContent: 'space-around'
+    paddingHorizontal: 15
   },
 
   searchContainer: {
@@ -15,7 +14,15 @@ export const HomeStyle = StyleSheet.create({
     width: '100%',
     height: 40,
     backgroundColor: '#FFFFFF',
-    borderRadius: 3
+    borderRadius: 3,
+    marginVertical: 25
+  },
+  
+  searchText: {
+    color: '#3F92C5',
+    textAlign: 'center',
+    marginVertical: 25,
+    fontSize: 16
   },
 
   searchIcon: {
@@ -30,14 +37,8 @@ export const HomeStyle = StyleSheet.create({
     color: '#3F92C5'
   },
 
-  vaccineList: {
-    flex: 0.8,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap'
-  },
-
   btnContainer: {
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+    marginVertical: 45
+  },
 });

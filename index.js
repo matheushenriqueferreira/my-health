@@ -4,6 +4,6 @@
 
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import NoLoggedNavigation from './config/NoLoggedNavigation'
+import StackConfig from './config/StackConfig';
 
-AppRegistry.registerComponent(appName, () => NoLoggedNavigation);
+AppRegistry.registerComponent(appName, () => StackConfig);

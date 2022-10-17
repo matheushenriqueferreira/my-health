@@ -25,18 +25,23 @@ export const EditVaccineStyle = StyleSheet.create({
   },
 
   labelStyle: {
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    fontSize: 16,
+    flexBasis: '40%'
   },
 
   inputStyle: {
     flex: 1,
     backgroundColor: '#FFFFFF',
     color: '#3F92C5',
-    height: 35
+    paddingVertical: 0,
+    height: 35,
+    fontSize: 16
   },
 
   dateText: {
-    color: '#3F92C5'
+    color: '#3F92C5',
+    fontSize: 16
   },  
 
   dateStyle: {
@@ -71,7 +76,7 @@ export const EditVaccineStyle = StyleSheet.create({
   },
 
   radioButtonLabel: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#FFFFFF'
   },
 
@@ -90,7 +95,7 @@ export const EditVaccineStyle = StyleSheet.create({
   },
   
   imageBtnText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#FFFFFF'
   },
@@ -146,6 +151,11 @@ export const EditVaccineStyle = StyleSheet.create({
   btnDeleteText: {
     fontSize: 16,
     color: '#FFFFFF'
+  },
+
+  ActivityIndicatorContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 
 });

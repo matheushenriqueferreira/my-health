@@ -5,16 +5,21 @@ export const NextVaccinesStyle = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     backgroundColor: '#ADD4D0',
-    justifyContent: 'space-around'
-  },
-
-  mainContainer1: {
-    flex: 0.8,
+    justifyContent: 'space-around',
+    paddingTop: 15
   },
 
   mainContainer2: {
-    flex: 0.1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginVertical: 45
   },
+
+  textStyle: {
+    flex: 1,
+    color: '#3F92C5',
+    textAlign: 'center',
+    marginVertical: 25,
+    fontSize: 16
+  }
 });

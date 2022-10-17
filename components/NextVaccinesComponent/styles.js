@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const NextVaccinesComponentStyle = StyleSheet.create({
   conatiner: {
     width: '100%',
-    height: 60,
+    height: 70,
     backgroundColor: '#FFFFFF',
     borderRadius: 8,
     marginVertical: 5,
@@ -17,6 +17,7 @@ export const NextVaccinesComponentStyle = StyleSheet.create({
   },
 
   nextVaccineDate: {
-    color: '#8B8B8B'
+    color: '#8B8B8B',
+    fontSize: 18
   }
 });

@@ -25,7 +25,8 @@ export const RecoverStyle = StyleSheet.create({
   
   labelStyle: {
     color: '#FFFFFF',
-    marginRight: 10
+    marginRight: 10,
+    fontSize: 18
   },
   
   inputStyle: {
@@ -33,6 +34,7 @@ export const RecoverStyle = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     flex: 1,
     height: 40,
+    fontSize: 18,
     color: '#3F92C5'
   },
 

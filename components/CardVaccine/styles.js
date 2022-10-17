@@ -1,5 +1,4 @@
-import { StyleSheet } from "react-native";
-import { color } from "react-native-reanimated";
+import { StyleSheet, Dimensions } from "react-native";
 
 export const CardVaccineStyle = StyleSheet.create({
   main: {
@@ -9,11 +8,10 @@ export const CardVaccineStyle = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     borderRadius: 8,
-    margin: 4,
-    width: '46%',
-    height: 180,
-    maxWidth: '48%',
-    maxHeight: 180
+    margin: 5,
+    width: (Dimensions.get('window').width/2)-25,
+    height: 170,
+    maxHeight: 170
   },
 
   textColorBlue: {
@@ -21,13 +19,13 @@ export const CardVaccineStyle = StyleSheet.create({
   },
 
   name: {
-    fontSize: 26
+    fontSize: 24
   },
 
   dose: {
     backgroundColor: '#3F92C5',
-    fontSize: 10,
-    paddingHorizontal: 8,
+    fontSize: 12,
+    paddingHorizontal: 15,
     color: '#FFFFFF'
   },
 
@@ -45,7 +43,7 @@ export const CardVaccineStyle = StyleSheet.create({
 
   container2: {
     width: '100%',
-    height: 100,
+    height: 80,
     alignItems: 'center',
     justifyContent: 'center'
   },

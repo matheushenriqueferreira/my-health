@@ -5,6 +5,7 @@ import NavbarComponent from '../../components/NavbarComponent';
 import ButtonComponent from '../../components/ButtonComponent';
 import { auth } from '../../config/FirebaseConfig/firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
+import FontGlobal from '../../styles/FontGlobal';
 
 const Recover = ({navigation}) => {
   const [userEmail, setUserEmail] = useState('');
@@ -30,12 +31,12 @@ const Recover = ({navigation}) => {
 
   return(
     <>
-      <NavbarComponent status='notLogged' navbarText='MyHealth' />
+      <NavbarComponent status='notLogged' navbarScreen={'MyHealth'} />
       <View style={RecoverStyle.main}>
         <View style={RecoverStyle.mainContainer}>
           <View style={RecoverStyle.inputLabel}>
-            <Text style={RecoverStyle.labelStyle}>E-mail</Text>
-            <TextInput onChangeText={(value) => {setUserEmail(value)}} value={userEmail} style={RecoverStyle.inputStyle} keyboardType={'email-address'}/>
+            <Text style={[RecoverStyle.labelStyle, FontGlobal.AveriaRegular]}>E-mail</Text>
+            <TextInput onChangeText={(value) => {setUserEmail(value)}} value={userEmail} style={[RecoverStyle.inputStyle, FontGlobal.AveriaRegular]} keyboardType={'email-address'}/>
           </View>
           {
             userEmail !== '' ?

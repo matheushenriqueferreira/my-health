@@ -6,7 +6,7 @@ export const ButtonComponentStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 30,
-    paddingVertical: 5
+    paddingVertical: 10,
   },
   
   btnTextStyle: {

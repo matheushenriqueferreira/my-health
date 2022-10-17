@@ -1,16 +1,17 @@
 import React, {useState} from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { View, Text } from "react-native";
 import { NextVaccinesComponentStyle } from "./styles";
+import FontGlobal from "../../styles/FontGlobal";
 
-const NextVaccinesComponent = () => {
-  const [vaccineName, setVaccineName] = useState('BCG');
-  const [vaccineDate, setVaccineDate] = useState('20/09/2022');
+const NextVaccinesComponent = ({item}) => {
+  const [vaccineName, setVaccineName] = useState(item.vaccineName);
+  const [vaccineDate, setVaccineDate] = useState(item.nextVaccinationDate);
   
   return(
-    <TouchableOpacity style={NextVaccinesComponentStyle.conatiner}>
-      <Text style={NextVaccinesComponentStyle.vaccineName}>{vaccineName}</Text>
-      <Text style={NextVaccinesComponentStyle.nextVaccineDate}>{vaccineDate}</Text>
-    </TouchableOpacity>
+    <View style={NextVaccinesComponentStyle.conatiner}>
+      <Text style={[NextVaccinesComponentStyle.vaccineName, FontGlobal.AveriaRegular]}>{vaccineName}</Text>
+      <Text style={[NextVaccinesComponentStyle.nextVaccineDate, FontGlobal.AveriaRegular]}>{vaccineDate}</Text>
+    </View>
   );
 }
 

@@ -27,7 +27,7 @@ export const NavbarComponentStyle = StyleSheet.create({
   },
 
   title: {
-    fontSize: 30,
+    fontSize: 36,
     color: '#419ED7',
     marginLeft: 10
   }

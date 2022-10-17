@@ -26,13 +26,14 @@ export const InitialStyle = StyleSheet.create({
 
   title: {
     color: '#419ED7',
-    fontSize: 44,
+    fontSize: 46,
     textDecorationLine: 'underline'
   },
 
+
   subtitle: {
     color: '#419ED7',
-    fontSize: 28,
+    fontSize: 32,
     textAlign: 'center'
   },  
 
@@ -54,21 +55,24 @@ export const InitialStyle = StyleSheet.create({
     height: 45,
     backgroundColor: '#ffffff',
     color: '#3F92C5',
+    fontSize: 18,
     paddingLeft: 10
   },
 
   labelStyle: {
     color: '#ffffff',
-    flexBasis: '14%'
+    fontSize: 18,
+    flexBasis: '18%'
   },
 
   passwordError: {
     color: '#FD7979',
-    fontSize: 16,
-    paddingLeft: 48
+    fontSize: 15,
+    paddingLeft: 62
   },
 
-  btnLogin: {
-    
+  ActivityIndicatorContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 });
