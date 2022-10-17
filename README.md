@@ -17,7 +17,7 @@
   <img src="./docs/Home2.jpg" width='160px' />
   <img src="./docs/EditVaccine.jpg" width='160px' />
   <img src="./docs/DeleteVaccine.jpg" width='160px' />
-  <img src="./docs/NextVaccinationjpg" width='160px' />
+  <img src="./docs/NextVaccination.jpg" width='160px' />
 </div>
 
 ## :white_check_mark: Funcionalidades do projeto
