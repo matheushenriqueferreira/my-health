@@ -10,6 +10,8 @@
 <p align="center">:syringe:</p>
 <div align="center">
   <img src="./docs/initial.png" width='160px' />
+  <img src="./docs/Register.png" width='160px' />
+  <img src="./docs/Recover.png" width='160px' />
 </div>
 
 ## :white_check_mark: Funcionalidades do projeto
