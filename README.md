@@ -12,6 +12,12 @@
   <img src="./docs/initial.png" width='160px' />
   <img src="./docs/Register.jpg" width='160px' />
   <img src="./docs/Recover.jpg" width='160px' />
+  <img src="./docs/Home.jpg" width='160px' />
+  <img src="./docs/NewVaccine.jpg" width='160px' />
+  <img src="./docs/Home2.jpg" width='160px' />
+  <img src="./docs/EditVaccine.jpg" width='160px' />
+  <img src="./docs/DeleteVaccine.jpg" width='160px' />
+  <img src="./docs/NextVaccinationjpg" width='160px' />
 </div>
 
 ## :white_check_mark: Funcionalidades do projeto
