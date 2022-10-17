@@ -70,6 +70,7 @@ Um celular android na versão 12 ou superior, com a depuração USB ativada ou A
 
 - [Node.js](https://nodejs.org/en/)
 - [Java 11 - Zulu JDK](https://www.azul.com/downloads/?package=jdk)
+- [Android Studio](https://developer.android.com/studio)
 - [React Native](https://reactnative.dev/)
 - [React Redux](https://react-redux.js.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
