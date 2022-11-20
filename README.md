@@ -56,11 +56,11 @@ Um celular android na versão 12 ou superior, com a depuração USB ativada ou A
     # Acesse a pasta do projeto baixado no terminal/cmd
     $ cd myhealth
 
-    # Inicializar o metro
-    $ npx react-native start
-
     # Instale as dependências
     $ npm install
+
+    # Inicializar o metro
+    $ npx react-native start
 
     # Execute a aplicação
     $ npx react-native run-android
