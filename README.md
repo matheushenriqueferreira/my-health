@@ -50,7 +50,7 @@ Acesse o código fonte em: [GitHub-myhealth](https://github.com/matheushenriquef
 
 Instalar em sua máquina as seguintes ferramentas:
 [Node.js](https://nodejs.org/en/) e um editor de código de sua preferência para desenvolvimento, no caso para esse projeto eu utilizei o [Visual Studio Code](https://code.visualstudio.com/).
-Um celular android na versão 12 ou superior, com a depuração USB ativada ou Android studio para criar emular um sistema android.
+Um celular android na versão 12 ou superior, com a depuração USB ativada ou Android studio para emular um dispositivo android.
 
 ### Rodar aplicação
     # Acesse a pasta do projeto baixado no terminal/cmd
