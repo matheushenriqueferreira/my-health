@@ -39,17 +39,32 @@
 - [x] Busca de vacinas
 
 ## :hammer_and_wrench: Executar a aplicação
-    # Acesse a pasta do projeto baixado no terminal/cmd
-    $ cd myhealth
+  
+  ### 1: Acesse a pasta do projeto baixado no terminal/cmd
+    cd my-health
 
-    # Instale as dependências
-    $ npm install
+  ### 2: Dentro da pasta do projeto, acesse o arquivo em /my-health/config/FirebaseConfig/firebase.js e substitua com as configurações do seu projeto criado no Firebase.
+    import { initializeApp } from "firebase/app";
+    import { getAuth } from 'firebase/auth';
+    import { initializeFirestore, getFirestore } from "firebase/firestore";
 
-    # Inicializar o metro
-    $ npx react-native start
+    const firebaseConfig = {
+      // Insira aqui a configuração do projeto do Firebase
+    };
 
-    # Execute a aplicação
-    $ npx react-native run-android
+    export const firebase = initializeApp(firebaseConfig);
+    export const auth = getAuth(firebase);
+    export const firestore = initializeFirestore(firebase, {experimentalForceLongPolling: true});
+  #### Duvidas? Entre em contato comigo ou acesse a documentação sobre a [configuração do projeto Firebase.](https://firebase.google.com/docs/web/setup)
+
+  ### 3: Instale as dependências
+    npm install
+
+  ### 4: Inicialize o Metro
+    npx react-native start
+
+  ### 5: Execute a aplicação
+    npx react-native run-android
 
 
 ## :hash: Tecnologias utilizadas
