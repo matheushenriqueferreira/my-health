@@ -3,7 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { initializeFirestore, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  // Insira aqui a configuração do projeto do Firebase
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 export const firebase = initializeApp(firebaseConfig);
